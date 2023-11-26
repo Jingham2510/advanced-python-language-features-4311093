@@ -13,9 +13,35 @@
 
 
 def string_combiner(*args, unique=False):
+    """
+    string_combiner(*args, unique=False)
+    Arguments:
+    *args: The variable argument 
+    unique: A boolean to determine whether the result can contain duplicate characters
+
+    Combines all the provided argument characters together
+    """
+
     result = ""
 
     # YOUR CODE HERE
+    #Go through all the arguments
+    for arg in args:
+        #check the type of the argument - ignore nonstrings or nonints
+        if (typ := type(arg)) is int or typ is str:
+            #Check if unique
+            if unique:
+                #Check to ensure the character isnt in results
+                for char in str(arg):
+                    if char in result:
+                        pass
+                    else:
+                        result = result + str(char)
+
+            else:
+                result = result + str(arg)
+
+
 
     return result
 
