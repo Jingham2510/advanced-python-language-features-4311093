@@ -20,10 +20,15 @@ test_str = "2 apples, 9 oranges?, 4 pears, Mike's 1 egg, Jane's 2 kiwis, $50!"
 
 # print the data
 str_data = {
+    #Get length of string
     "Length: " : len(test_str),
+    #Count number of digits
     "Digits " : len([x for x in test_str if x.isdigit()]),
+    #Count number of punctuation
     "Punctuation: " : len([x for x in test_str if x in string.punctuation]),
+    #Create set of letters
     "Unique Letters: " : (un_str :={x for x in test_str if x.isalpha()}),
+    #Get length of the set
     "Unique Count: " : len(un_str)
 }
 pprint.pp(str_data)
